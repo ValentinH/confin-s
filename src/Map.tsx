@@ -73,7 +73,8 @@ const Map = () => {
       <div id="search-box" ref={searchBox} />
       <div id="credits">
         <span>
-          Fait avec ❤️ par <a href="https://valentin-hervieu.fr">Valentin Hervieu</a>
+          Fait avec ❤️ par <a href="https://valentin-hervieu.fr">Valentin</a> (
+          <a href="https://github.com/ValentinH/confines">code source</a>)
         </span>
       </div>
     </div>

@@ -29,6 +29,8 @@ const initMap = (mapContainer: HTMLDivElement, searchBox: HTMLDivElement) => {
 
   geocoder.on('result', ({ result }: any) => {
     window.localStorage.setItem(LS_LAST_SEARCH, result.place_name)
+
+    // 1km
     const circle = new MapboxCircle(result.center, 1000, {
       strokeColor: '#4668F2',
       strokeWeight: 1,
@@ -36,6 +38,14 @@ const initMap = (mapContainer: HTMLDivElement, searchBox: HTMLDivElement) => {
       fillOpacity: 0.1,
     })
     circle.addTo(map)
+
+    // 100km
+    const circle2 = new MapboxCircle(result.center, 100000, {
+      strokeColor: '#4668F2',
+      strokeWeight: 2,
+      fillOpacity: 0,
+    })
+    circle2.addTo(map)
   })
 
   const lastSearch = window.localStorage.getItem(LS_LAST_SEARCH)

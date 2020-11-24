@@ -39,8 +39,8 @@ const initMap = (mapContainer: HTMLDivElement, searchBox: HTMLDivElement) => {
     })
     circle.addTo(map)
 
-    // 100km
-    const circle2 = new MapboxCircle(result.center, 100000, {
+    // 20km
+    const circle2 = new MapboxCircle(result.center, 20000, {
       strokeColor: '#4668F2',
       strokeWeight: 2,
       fillOpacity: 0,

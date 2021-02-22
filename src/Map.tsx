@@ -21,8 +21,8 @@ const initMap = (mapContainer: HTMLDivElement, searchBox: HTMLDivElement) => {
     language: 'fr-FR',
     countries: 'fr',
     mapboxgl: mapboxgl,
-    zoom: 14,
-    placeholder: 'Saisis une adresse pour tracer le rayon de 1km',
+    zoom: 13,
+    placeholder: 'Saisis une adresse pour tracer le rayon de 5km',
   })
   searchBox.innerHTML = ''
   searchBox.appendChild(geocoder.onAdd(map))
@@ -31,21 +31,13 @@ const initMap = (mapContainer: HTMLDivElement, searchBox: HTMLDivElement) => {
     window.localStorage.setItem(LS_LAST_SEARCH, result.place_name)
 
     // 1km
-    const circle = new MapboxCircle(result.center, 1000, {
+    const circle = new MapboxCircle(result.center, 5000, {
       strokeColor: '#4668F2',
       strokeWeight: 1,
       fillColor: '#4668F2',
       fillOpacity: 0.1,
     })
     circle.addTo(map)
-
-    // 20km
-    const circle2 = new MapboxCircle(result.center, 20000, {
-      strokeColor: '#4668F2',
-      strokeWeight: 2,
-      fillOpacity: 0,
-    })
-    circle2.addTo(map)
   })
 
   const lastSearch = window.localStorage.getItem(LS_LAST_SEARCH)

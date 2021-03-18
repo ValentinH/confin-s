@@ -30,8 +30,8 @@ const initMap = (mapContainer: HTMLDivElement, searchBox: HTMLDivElement) => {
   geocoder.on('result', ({ result }: any) => {
     window.localStorage.setItem(LS_LAST_SEARCH, result.place_name)
 
-    // 1km
-    const circle = new MapboxCircle(result.center, 5000, {
+    // 10km
+    const circle = new MapboxCircle(result.center, 10000, {
       strokeColor: '#4668F2',
       strokeWeight: 1,
       fillColor: '#4668F2',
